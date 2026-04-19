@@ -1,7 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { supabase } from "../../lib/supabase";
+import { supabase } from "../../lib/supabaseClient";
 
 export async function deleteMenuItemAction(id: number) {
   const { error } = await supabase.from("menu_items").delete().eq("id", id);

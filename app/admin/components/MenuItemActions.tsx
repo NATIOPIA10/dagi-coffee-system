@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { deleteMenuItemAction, updateMenuItemAction } from "../../actions/menu";
-import { supabase } from "../../../lib/supabase";
+import { supabase } from "../../../lib/supabaseClient";
 
 type MenuItem = {
   id: number;

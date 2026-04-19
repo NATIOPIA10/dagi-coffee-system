@@ -1,7 +1,7 @@
 import Link from "next/link";
 import QRCodeDisplay from "./components/QRCodeDisplay";
 import ThemeToggle from "./components/ThemeToggle";
-import { supabase } from "../lib/supabase";
+import { supabase } from "../lib/supabaseClient";
 
 export const revalidate = 0; // Disable caching so settings update immediately
 

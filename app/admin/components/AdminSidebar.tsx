@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { supabase } from "../../../lib/supabase";
+import { supabase } from "../../../lib/supabaseClient";
 
 export default function AdminSidebar() {
   const pathname = usePathname();

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import { supabase } from "../../../lib/supabase";
+import { supabase } from "../../../lib/supabaseClient";
 import { useRouter } from "next/navigation";
 import { saveSettingsAction } from "../../actions/settings";
 
