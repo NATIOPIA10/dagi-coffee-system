@@ -34,6 +34,10 @@ export default function AdminSidebar() {
           <span className="material-symbols-outlined">tune</span>
           Website Settings
         </Link>
+        <Link href="/admin/messages" className={`flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-colors ${pathname === '/admin/messages' ? 'bg-primary/10 text-primary' : 'text-on-surface-variant hover:bg-surface-container-highest'}`}>
+          <span className="material-symbols-outlined">mail</span>
+          Messages
+        </Link>
       </nav>
       
       <div className="p-4 border-t border-outline-variant/20">
