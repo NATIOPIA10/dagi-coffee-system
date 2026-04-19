@@ -1,6 +1,7 @@
 import Link from "next/link";
 import QRCodeDisplay from "./components/QRCodeDisplay";
 import ThemeToggle from "./components/ThemeToggle";
+import ContactForm from "./components/ContactForm";
 import { supabase } from "../lib/supabaseClient";
 
 export const revalidate = 0; // Disable caching so settings update immediately
@@ -259,6 +260,9 @@ export default async function Home() {
                     </p>
                   </div>
                 </div>
+              </div>
+              <div className="mt-12">
+                <ContactForm />
               </div>
             </div>
             <div className="rounded-xl overflow-hidden bg-surface-container-low h-[400px]">
