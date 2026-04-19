@@ -1,10 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { supabase } from "../../../lib/supabase";
 
 export default function AdminSidebar() {
   const pathname = usePathname();
+  const router = useRouter();
+
+  async function handleLogout() {
+    await supabase.auth.signOut();
+    router.push("/login");
+  }
 
   return (
     <aside className="w-64 bg-surface-container-low border-r border-outline-variant/20 flex flex-col">
@@ -28,6 +35,16 @@ export default function AdminSidebar() {
           Website Settings
         </Link>
       </nav>
+      
+      <div className="p-4 border-t border-outline-variant/20">
+        <button 
+          onClick={handleLogout}
+          className="w-full flex items-center gap-3 px-4 py-3 rounded-xl font-medium text-red-600 hover:bg-red-50 transition-colors"
+        >
+          <span className="material-symbols-outlined">logout</span>
+          Sign Out
+        </button>
+      </div>
     </aside>
   );
 }

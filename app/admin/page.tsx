@@ -1,11 +1,44 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { supabase } from "../../lib/supabase";
 import Link from "next/link";
 import MenuItemActions from "./components/MenuItemActions";
 
-export const revalidate = 0; // Disable caching for the admin page
+export default function AdminMenuPage() {
+  const [menuItems, setMenuItems] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-export default async function AdminMenuPage() {
-  const { data: menuItems, error } = await supabase.from('menu_items').select('*').order('category');
+  async function fetchMenu() {
+    setLoading(true);
+    const { data, error: fetchError } = await supabase
+      .from("menu_items")
+      .select("*")
+      .order("category");
+
+    if (fetchError) {
+      setError(fetchError.message);
+    } else {
+      setMenuItems(data || []);
+    }
+    setLoading(false);
+  }
+
+  useEffect(() => {
+    fetchMenu();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="p-8 flex items-center justify-center min-h-[400px]">
+        <div className="flex flex-col items-center gap-4">
+          <span className="material-symbols-outlined animate-spin text-primary text-5xl">progress_activity</span>
+          <p className="text-on-surface-variant font-medium">Loading menu items...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="p-8 max-w-6xl mx-auto">
@@ -24,11 +57,11 @@ export default async function AdminMenuPage() {
         <div className="bg-error-container text-on-error-container p-6 rounded-2xl">
           <h2 className="font-bold flex items-center gap-2 mb-2 text-xl">
             <span className="material-symbols-outlined text-error">warning</span>
-            Database Not Configured
+            Database Connection Error
           </h2>
-          <p className="mb-4">Please run the SQL setup script in your Supabase SQL Editor to create the <code>menu_items</code> table and seed the initial data.</p>
+          <p className="mb-4">There was an issue fetching your menu items:</p>
           <div className="bg-white/50 p-4 rounded-xl font-mono text-sm overflow-x-auto">
-            {error.message}
+            {error}
           </div>
         </div>
       ) : (
