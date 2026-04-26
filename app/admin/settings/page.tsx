@@ -243,7 +243,7 @@ export default function AdminSettingsPage() {
               <TextInput
                 value={settings.store_name}
                 onChange={(v) => handleTextChange("store_name", v)}
-                placeholder="e.g. Dagi Coffee"
+                placeholder="e.g. Coffee Corner"
               />
             </Field>
           </SectionCard>
@@ -277,7 +277,7 @@ export default function AdminSettingsPage() {
                   type="email"
                   value={settings.contact_email}
                   onChange={(v) => handleTextChange("contact_email", v)}
-                  placeholder="hello@dagicoffee.com"
+                  placeholder="hello@coffeecorner.com"
                 />
               </Field>
 

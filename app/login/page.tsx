@@ -36,7 +36,7 @@ export default function LoginPage() {
       <div className="max-w-md w-full">
         <div className="text-center mb-10">
           <Link href="/" className="font-headline text-3xl text-primary font-bold italic tracking-tight mb-4 inline-block">
-            Dagi Coffee
+            Coffee Corner
           </Link>
           <h1 className="text-2xl font-bold text-on-surface">Admin Portal</h1>
           <p className="text-on-surface-variant mt-2">Please sign in to manage your website</p>
@@ -59,7 +59,7 @@ export default function LoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full bg-surface-container border border-outline-variant/30 rounded-2xl px-5 py-4 text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                placeholder="admin@dagicoffee.com"
+                placeholder="admin@coffeecorner.com"
               />
             </div>
 
@@ -91,7 +91,7 @@ export default function LoginPage() {
         </div>
 
         <p className="text-center mt-8 text-on-surface-variant text-sm">
-          &copy; {new Date().getFullYear()} Dagi Coffee Management System
+          &copy; {new Date().getFullYear()} Coffee Corner Management System
         </p>
       </div>
     </div>

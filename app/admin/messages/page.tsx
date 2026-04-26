@@ -18,6 +18,7 @@ export default function AdminMessagesPage() {
     if (fetchError) {
       setError(fetchError.message);
     } else {
+      console.log("Fetched messages:", data);
       setMessages(data || []);
     }
     setLoading(false);
@@ -113,7 +114,7 @@ export default function AdminMessagesPage() {
                     <span className="material-symbols-outlined">delete</span>
                   </button>
                   <a 
-                    href={`mailto:${msg.email}?subject=Re: Dagi Coffee Inquiry`}
+                    href={`mailto:${msg.email}?subject=Re: Coffee Corner Inquiry`}
                     className="p-3 text-primary hover:bg-primary/5 rounded-xl transition-colors"
                     title="Reply via Email"
                   >

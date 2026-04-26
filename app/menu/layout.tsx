@@ -16,7 +16,7 @@ export default function MenuLayout({
           <Link href="/" className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-stone-200/30 transition-all">
             <span className="material-symbols-outlined text-amber-900" data-icon="home">home</span>
           </Link>
-          <h1 className="font-serif text-2xl tracking-tighter text-amber-950 font-bold">Dagi Coffee</h1>
+          <h1 className="font-serif text-2xl tracking-tighter text-amber-950 font-bold">Coffee Corner</h1>
           <div className="flex items-center gap-4">
             <ThemeToggle />
             <button className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-stone-200/30 transition-all">

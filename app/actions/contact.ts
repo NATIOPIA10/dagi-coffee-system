@@ -1,5 +1,6 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
 import { supabase } from "../../lib/supabaseClient";
 
 export async function sendContactMessage(formData: FormData) {
@@ -13,12 +14,15 @@ export async function sendContactMessage(formData: FormData) {
 
   const { error } = await supabase
     .from("contact_messages")
-    .insert([{ name, email, message, created_at: new Date().toISOString() }]);
+    .insert([{ name, email, message }]);
 
   if (error) {
     console.error("Supabase error:", error);
     return { error: "Failed to send message. Please try again later." };
   }
+
+  // Ensure the admin messages page reflects the new data
+  revalidatePath("/admin/messages");
 
   return { success: true };
 }

@@ -18,7 +18,7 @@ export default function AdminSidebar() {
       <div className="p-6 border-b border-outline-variant/20">
         <Link href="/" className="font-serif text-xl tracking-tighter text-amber-950 font-bold flex items-center gap-2">
           <span className="material-symbols-outlined text-primary">local_cafe</span>
-          Dagi Admin
+          Coffee Corner Admin
         </Link>
       </div>
       <nav className="flex-1 p-4 space-y-2">

@@ -13,7 +13,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Dagi Coffee - Dilla, Ethiopia",
+  title: "Coffee Corner - Dilla, Ethiopia",
   description: "Fresh Coffee • Cozy Atmosphere • Dilla, Ethiopia",
 };
 

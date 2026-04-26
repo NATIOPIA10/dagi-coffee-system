@@ -13,10 +13,10 @@ export default async function Home() {
   ]);
 
   // Store Info
-  const storeName = settings?.store_name || "Dagi Coffee";
+  const storeName = settings?.store_name || "Coffee Corner";
   const storeAddress = settings?.store_address || "Dilla, Ethiopia";
   const phoneNumber = settings?.phone_number || "+251 911 234 567";
-  const contactEmail = settings?.contact_email || "hello@dagicoffee.com";
+  const contactEmail = settings?.contact_email || "hello@coffeecorner.com";
   const hoursWeekday = settings?.hours_weekday || "7:00 AM - 9:00 PM";
   const hoursWeekend = settings?.hours_weekend || "8:00 AM - 8:00 PM";
 
@@ -26,7 +26,7 @@ export default async function Home() {
   const aboutTitle = settings?.about_title || "Our Story in Dilla";
   const aboutBody1 =
     settings?.about_body_1 ||
-    "Nestled in the heart of Dilla, Ethiopia—a region globally celebrated for its exceptional coffee heritage—Dagi Coffee offers more than just a beverage; it offers an experience. We pride ourselves on sourcing the finest local beans, roasting them to perfection, and serving them in an environment that feels like home.";
+    "Nestled in the heart of Dilla, Ethiopia—a region globally celebrated for its exceptional coffee heritage—Coffee Corner offers more than just a beverage; it offers an experience. We pride ourselves on sourcing the finest local beans, roasting them to perfection, and serving them in an environment that feels like home.";
   const aboutBody2 =
     settings?.about_body_2 ||
     "Whether you're starting your morning with a robust espresso or winding down with a creamy cappuccino, our cozy atmosphere is designed to be your sanctuary. Every cup is a testament to our commitment to quality and the rich coffee culture of Ethiopia.";
@@ -102,7 +102,7 @@ export default async function Home() {
         <section className="relative min-h-[921px] flex items-center justify-center pt-24 pb-12 px-6 overflow-hidden bg-surface-container-highest">
           <div className="absolute inset-0 z-0">
             <img
-              alt="Cozy Dagi Coffee shop interior in Dilla Ethiopia with warm lighting, espresso machine, and wooden tables"
+              alt="Cozy Coffee Corner shop interior in Dilla Ethiopia with warm lighting, espresso machine, and wooden tables"
               className="w-full h-full object-cover object-center"
               src={heroImageUrl}
             />
